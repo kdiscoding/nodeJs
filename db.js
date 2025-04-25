@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-
+require('dotenv').config();
 // the mognodb connection url
 // QAdhJxt2rxee9tPf password for altas db
-// const monogURL = 'mongodb://127.0.0.1:27017/hotels';
-const monogURL = 'mongodb+srv://dudiKailash:QAdhJxt2rxee9tPf@cluster0.oc7clk9.mongodb.net/';
+// const monogURL = DB_LOCAL_URL;
+const monogURL = process.env.DB_URL;
 
 
 // set up mongoDB connection

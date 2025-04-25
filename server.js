@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const db = require('./db');
+require('dotenv').config(); 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json()); // req.body
 const Person = require('./models/person');
@@ -35,7 +36,7 @@ app.get('/person', async (req, res) => {
       res.status(500).json({error: 'internal server error'});
   }
 });
-
-app.listen(3000, () =>{
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () =>{
   console.log('listening on port 3000');
 });
